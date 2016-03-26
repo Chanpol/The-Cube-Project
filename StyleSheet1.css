@@ -1,0 +1,64 @@
+﻿body {
+    background-color: lightgrey;    
+}
+h1 {
+    color: blue;
+}
+p {
+    color:green;
+}
+
+#cube {
+  margin: 100px;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  perspective: 600px;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg) rotateX(45deg);
+  opacity: 0.8;
+  backface-visibility: visible;
+  /*transition: transform 2s;*/
+ }
+ 
+.cubeSpin {
+	animation-name: example;
+   animation-duration: 5s;
+   animation-iteration-count:infinite;
+}
+ 
+ @keyframes example {
+    from {transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);}
+    to {transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);}
+}
+ 
+.cube-face {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.cube-face-front {
+  background: yellow;
+  transform: translate3d(0, 0, 75px);
+} 
+
+.cube-face-back {
+  background: orange;
+  transform: rotateY(180deg) translate3d(0, 0, 75px);
+} 
+.cube-face-left {
+  background: green;
+  transform: rotateY(-90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-right {
+  background: magenta;
+  transform: rotateY(90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-top {
+  background: blue;
+  transform: rotateX(90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-bottom {
+  background: red;
+  transform: rotateX(-90deg) translate3d(0, 0, 75px);
+}

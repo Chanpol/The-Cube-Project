@@ -1,0 +1,117 @@
+        <div id="cube">
+            <figure class="front">1</figure>
+            <figure class="back">2</figure>
+            <figure class="right">3</figure>
+            <figure class="left">4</figure>
+            <figure class="top">5</figure>
+            <figure class="bottom">6</figure>
+        </div>
+		
+				<section class="contain">
+			<div id="cube">
+				<figure class="front">1</figure>
+			</div>
+		</section>
+		
+		
+		
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <title>Hello Cube</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+	<div class="container">
+		<div class="cube">front</div>
+	</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <title>Hello Cube</title>
+	
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+	<div id="hello" class="cube">
+		<div class="cube-face  cube-face-front"></div>
+		<div class="cube-face  cube-face-back"></div>
+		<div class="cube-face  cube-face-left"></div>
+		<div class="cube-face  cube-face-right"></div>
+		<div class="cube-face  cube-face-top"></div>
+		<div class="cube-face  cube-face-bottom"></div>
+		
+	</div>
+	<button type="button" onclick="myFunction("hello")">Rotate</button>
+</body>
+</html>
+
+
+
+body {
+    background-color: lightgrey;    
+}
+h1 {
+    color: blue;
+}
+p {
+    color:green;
+}
+
+.cube {
+  margin: 100px;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  perspective: 600px;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg) rotateX(45deg);
+  opacity: 0.8;
+  /*transition: transform 2s;*/
+ }
+ /*
+ div:hover {
+    transform: rotate(180deg);
+}*/
+div:active {
+     transform: rotateY(45deg) rotateX(45deg);
+}
+ 
+.cube-face {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.cube-face-front {
+  background: yellow;
+  transform: translate3d(0, 0, 75px);
+} 
+
+.cube-face-back {
+  background: orange;
+  transform: rotateY(180deg) translate3d(0, 0, 75px);
+} 
+.cube-face-left {
+  background: green;
+  transform: rotateY(-90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-right {
+  background: magenta;
+  transform: rotateY(90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-top {
+  background: blue;
+  transform: rotateX(90deg) translate3d(0, 0, 75px);
+} 
+.cube-face-bottom {
+  background: red;
+  transform: rotateX(-90deg) translate3d(0, 0, 75px);
+}
